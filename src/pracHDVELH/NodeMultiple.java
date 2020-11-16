@@ -31,8 +31,9 @@ private NodeMultiple[] daughters;
 	 * @param i the index of the daughter node.
 	 * @return the {@code i}th daughter node, or {@code null} if it does not exist.
 	 */
-	public NodeMultiple getDaughter(int i) {
-		/* TO BE COMPLETED */
+	public NodeMultiple getDaughter(int i)
+	{
+		return daughters[i];
 	}
 
 	/**
@@ -51,7 +52,7 @@ private NodeMultiple[] daughters;
 	 */
 	public void setDaughter(NodeMultiple daughter, int i)
 	{
-		[i] = daughter;
+		daughters[i] = daughter;
 	}
 
 	/**
