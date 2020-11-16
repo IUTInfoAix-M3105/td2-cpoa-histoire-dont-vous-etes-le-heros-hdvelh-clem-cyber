@@ -15,7 +15,7 @@ public class NodeMultiple {
 	public static final int ERROR_STATUS_INDEX_OUT_OF_RANGE = -1;
 	public static final String ERROR_MSG_INDEX_OUT_OF_RANGE = "Index out of range";
 	public static int NODE_MAX_ARITY = 10;
-
+private NodeMultiple[] daughters;
 	/* Overridden methods */
 	@Override
 	public String toString() {
@@ -49,8 +49,9 @@ public class NodeMultiple {
 	 * @param daughter the node to be linked as a daughter of {@code this} node.
 	 * @param i        the daughter node's index
 	 */
-	public void setDaughter(NodeMultiple daughter, int i) {
-		/* TO BE COMPLETED */
+	public void setDaughter(NodeMultiple daughter, int i)
+	{
+		[i] = daughter;
 	}
 
 	/**
@@ -75,8 +76,15 @@ public class NodeMultiple {
 	 * 
 	 * @param daughter
 	 */
-	public void addDaughter(NodeMultiple daughter) {
-		/* TO BE COMPLETED */
+	public void addDaughter(NodeMultiple daughter)
+	{
+		if (daughter == null)
+			return;
+		int i = 0;
+		while (daughters[i] != null && i < NODE_MAX_ARITY)
+			i++;
+		if (i < NODE_MAX_ARITY)
+			daughters[i] = daughter;
 	}
 
 	/**
