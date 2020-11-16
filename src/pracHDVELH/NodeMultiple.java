@@ -36,6 +36,8 @@ public class NodeMultiple
 	 */
 	public NodeMultiple getDaughter(int i)
 	{
+		if (i >= NODE_MAX_ARITY || i < 0)
+			ErrorNaiveHandler.abort(ERROR_STATUS_INDEX_OUT_OF_RANGE, ERROR_MSG_INDEX_OUT_OF_RANGE+'@'+getClass()+".getDaughter()");
 		return daughters[i];
 	}
 
