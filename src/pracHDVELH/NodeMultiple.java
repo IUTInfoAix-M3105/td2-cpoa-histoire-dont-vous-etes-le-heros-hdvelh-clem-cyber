@@ -11,11 +11,14 @@ import myUtils.ErrorNaiveHandler;
  * @author prost
  *
  */
-public class NodeMultiple {
+public class NodeMultiple
+{
 	public static final int ERROR_STATUS_INDEX_OUT_OF_RANGE = -1;
 	public static final String ERROR_MSG_INDEX_OUT_OF_RANGE = "Index out of range";
 	public static int NODE_MAX_ARITY = 10;
-private NodeMultiple[] daughters;
+	private NodeMultiple[] daughters;
+	private Object Ndata;
+
 	/* Overridden methods */
 	@Override
 	public String toString() {
@@ -66,8 +69,11 @@ private NodeMultiple[] daughters;
 	/**
 	 * @param daughters the daughters to set
 	 */
-	public void setDaughters(NodeMultiple[] daughters) {
-		/* TO BE COMPLETED */
+	public void setDaughters(NodeMultiple[] daughtersAdd)
+	{
+		int i = 0;
+		while (daughtersAdd[i] != null && i < NODE_MAX_ARITY)
+			daughtersAdd[i] = daughters[i];
 	}
 
 	/**
@@ -92,31 +98,37 @@ private NodeMultiple[] daughters;
 	/**
 	 * @return the content data
 	 */
-	public Object getData() {
-		/* TO BE COMPLETED */
+	public Object getData()
+	{
+		return Ndata;
 	}
 
 	/**
 	 * @param data
 	 */
-	public void setData(Object data) {
-		/* TO BE COMPLETED */
+	public void setData(Object data)
+	{
+		Ndata = data;
 	}
 
 	/**
 	 * @return {@code true} if and only if this node has at least one non-null
 	 *         daughter node.
 	 */
-	public boolean hasDaughters() {
-		/* TO BE COMPLETED */
+	public boolean hasDaughters()
+	{
+		if (getDaughters() != null) return true;
+		else return false;
 	}
 
 	/* Constructors */
 	/**
 	 * Default constructor.
 	 */
-	public NodeMultiple() {
-		/* TO BE COMPLETED */
+	public NodeMultiple()
+	{
+		this.Ndata = null;
+		daughters = new NodeMultiple[NODE_MAX_ARITY];
 	}
 
 	/**
@@ -125,8 +137,11 @@ private NodeMultiple[] daughters;
 	 * 
 	 * @param data
 	 */
-	public NodeMultiple(Object data) {
-		/* TO BE COMPLETED */
+	public NodeMultiple(Object data)
+	{
+		this();
+		this.Ndata = data;
+	}
 }
 
 // eof
