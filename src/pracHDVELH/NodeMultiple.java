@@ -21,8 +21,9 @@ public class NodeMultiple
 
 	/* Overridden methods */
 	@Override
-	public String toString() {
-		/* TO BE COMPLETED */
+	public String toString()
+	{
+		return getData().toString();
 	}
 
 	/* Getters/Setters */
@@ -57,7 +58,7 @@ public class NodeMultiple
 	 */
 	public void setDaughter(NodeMultiple daughter, int i)
 	{
-		daughters[i] = daughter;
+		this.daughters[i] = daughter;
 	}
 
 	/**
@@ -65,7 +66,7 @@ public class NodeMultiple
 	 */
 	public NodeMultiple[] getDaughters()
 	{
-		return daughters;
+		return this.daughters;
 	}
 
 	/**
@@ -75,7 +76,7 @@ public class NodeMultiple
 	{
 		int i = 0;
 		while (daughtersAdd[i] != null && i < NODE_MAX_ARITY)
-			daughtersAdd[i] = daughters[i];
+			daughtersAdd[i] = this.daughters[i];
 	}
 
 	/**
@@ -91,10 +92,10 @@ public class NodeMultiple
 		if (daughter == null)
 			return;
 		int i = 0;
-		while (daughters[i] != null && i < NODE_MAX_ARITY)
+		while (this.daughters[i] != null && i < NODE_MAX_ARITY)
 			i++;
 		if (i < NODE_MAX_ARITY)
-			daughters[i] = daughter;
+			this.daughters[i] = daughter;
 	}
 
 	/**
