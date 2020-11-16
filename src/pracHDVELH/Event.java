@@ -96,21 +96,24 @@ public class Event extends NodeMultiple {
 	/**
 	 * @return the gui
 	 */
-	public GUIManager getGui() {
+	public GUIManager getGui()
+	{
 		/* TO BE COMPLETED */
 	}
 
 	/**
 	 * @param gui the gui to set
 	 */
-	public void setGui(GUIManager gui) {
+	public void setGui(GUIManager gui)
+	{
 		/* TO BE COMPLETED */
 	}
 
 	/**
 	 * @return the id
 	 */
-	public int getId() {
+	public int getId()
+	{
 		/* TO BE COMPLETED */
 	}
 

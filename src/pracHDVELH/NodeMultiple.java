@@ -19,13 +19,15 @@ public class NodeMultiple
 	private NodeMultiple[] daughters;
 	private Object Ndata;
 
-	/* Overridden methods */
-	@Override
 	public String toString()
 	{
-		return getData().toString();
+		StringBuilder info = new StringBuilder();
+		info.append(getData().toString());
+		return info.toString();
 	}
 
+	/* Overridden methods */
+	@Override
 	/* Getters/Setters */
 	/**
 	 * Gets the {@code i}th daughter node.
