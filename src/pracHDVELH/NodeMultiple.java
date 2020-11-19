@@ -122,8 +122,12 @@ public class NodeMultiple
 	 */
 	public boolean hasDaughters()
 	{
-		if (getDaughters() != null) return true;
-		else return false;
+		if (daughters == null)
+			return false;
+		int i = 0;
+		while (i < daughters.length && daughters[i] != null)
+			++i;
+		return i < daughters.length;
 	}
 
 	/* Constructors */

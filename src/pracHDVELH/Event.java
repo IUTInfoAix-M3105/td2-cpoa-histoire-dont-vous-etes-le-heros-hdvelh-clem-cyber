@@ -13,16 +13,40 @@ import myUtils.ErrorNaiveHandler;
  * @author prost
  *
  */
-public class Event extends NodeMultiple {
+public class Event extends NodeMultiple
+{
 	public static final String ERROR_MSG_UNEXPECTED_END = "Sorry, for some unexpected reason the story ends here...";
 	public static final String PROMPT_ANSWER = "Answer: ";
 	public static final String WARNING_MSG_INTEGER_EXPECTED = "Please input a integer within range!";
 
+	private int id;
+	/** Event identifier **/
+	private GUIManager gui;
+	/** Graphical User Interface **/
+	private String playerAnswer;
+	/** Text Version of player's answer **/
+	private int chosenPath;
+	/** Daughter's index chosen for the next event **/
+	private Scanner reader;
+	/* input reader **/
+	static private int lastId;
+
+
+	public Event() {
+	}
+
+	public <string> Event (GUIManager gui, string data)
+	{
+		super(data);
+		this.gui = gui;
+		id = ++lastId;
+		reader = gui.getInputReader();
+	}
 	/**
 	 * @return the playerAnswer
 	 */
 	public String getPlayerAnswer() {
-		/* TO BE COMPLETED */
+
 	}
 
 	/**
@@ -115,10 +139,6 @@ public class Event extends NodeMultiple {
 	public int getId()
 	{
 		/* TO BE COMPLETED */
-	}
-
-	/* Methods */
-	/* TO BE COMPLETED */
 	}
 }
 
