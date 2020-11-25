@@ -87,7 +87,7 @@ public class Event extends NodeMultiple
 		this.Ndata = data;
 	}
 
-	public Event getDaughter(int i)
+	public Event getDaughterE(int i)
 	{
 		return this.daughters[i];
 	}
@@ -110,6 +110,11 @@ public class Event extends NodeMultiple
 	public int getId()
 	{
 		return this.id;
+	}
+
+	public boolean IsFinal ()
+	{
+		return !this.hasDaughters();
 	}
 }
 
