@@ -15,7 +15,37 @@ public class Scenario {
 	private Event head;
 	private GUIManager gui;
 
-	/* TO BE COMPLETED */
+	Scenario ()
+	{
+		this.head = null;
+		this.gui = null;
+	}
+
+	Scenario (Event headArg, GUIManager guiArg)
+	{
+		this.head = headArg;
+		this.gui = guiArg;
+	}
+
+	public Event getHead ()
+	{
+		return this.head;
+	}
+
+	public void setHead (Event headArg)
+	{
+		this.head = headArg;
+	}
+
+	public GUIManager getGuiS ()
+	{
+		return this.gui;
+	}
+
+	public void setGuiS (GUIManager gui)
+	{
+		this.gui = gui;
+	}
 
 	/* MAIN */
 	public static void main(String[] args) {
@@ -44,7 +74,7 @@ public class Scenario {
 		event1.addDaughter(endEvent);
 		event2.addDaughter(event1);
 		event2.addDaughter(startEvent);
-		scenario = new Scenario(gui, startEvent);
+		scenario = new Scenario(startEvent, gui);
 
 		// *2
 		// ...
