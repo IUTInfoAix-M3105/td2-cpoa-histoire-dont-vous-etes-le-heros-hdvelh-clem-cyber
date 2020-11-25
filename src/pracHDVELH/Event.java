@@ -116,6 +116,36 @@ public class Event extends NodeMultiple
 	{
 		return !this.hasDaughters();
 	}
+
+	public boolean isInRange (int index)
+	{
+		/* A compléter */
+		return true;
+	}
+
+	public int interpretAnswer (String answer)
+	{
+		/* A compléter */
+		return 0;
+	}
+
+	public Event run ()
+	{
+		/* A compléter */
+		Event event = new Event();
+		return event;
+	}
+
+	public String toString()
+	{
+		StringBuilder info = new StringBuilder();
+		info.append("Event #");
+		info.append(getId());
+		info.append(" : ");
+		info.append(getData().toString());
+		return info.toString();
+	}
+
 }
 
 // eof
