@@ -30,115 +30,86 @@ public class Event extends NodeMultiple
 	private Scanner reader;
 	/* input reader **/
 	static private int lastId;
+	private Event[] daughters;
 
 
-	public Event() {
+	public Event()
+	{
+		this.Ndata = null;
 	}
 
 	public <string> Event (GUIManager gui, string data)
 	{
-		super(data);
+		this.Ndata = data;
 		this.gui = gui;
 		id = ++lastId;
 		reader = gui.getInputReader();
 	}
-	/**
-	 * @return the playerAnswer
-	 */
-	public String getPlayerAnswer() {
 
+	public String getPlayerAnswer()
+	{
+		return this.playerAnswer;
 	}
 
-	/**
-	 * @param playerAnswer the playerAnswer to set
-	 */
-	public void setPlayerAnswer(String playerAnswer) {
-		/* TO BE COMPLETED */
+	public void setPlayerAnswer(String playerAnswerArg)
+	{
+		this.playerAnswer = playerAnswerArg;
 	}
 
-	/**
-	 * @return the reader
-	 */
-	public Scanner getReader() {
-		/* TO BE COMPLETED */
+	public Scanner getReader()
+	{
+		return this.reader;
 	}
 
-	/**
-	 * @param reader the reader to set
-	 */
-	public void setReader(Scanner reader) {
-		/* TO BE COMPLETED */
+	public void setReader(Scanner readerArg)
+	{
+		this.reader = readerArg;
 	}
 
-	/**
-	 * @return the chosenPath
-	 */
-	public int getChosenPath() {
-		/* TO BE COMPLETED */
+	public int getChosenPath()
+	{
+		return this.chosenPath;
 	}
 
-	/**
-	 * @param chosenPath the chosenPath to set
-	 */
-	public void setChosenPath(int chosenPath) {
-		/* TO BE COMPLETED */
+	public void setChosenPath(int chosenPathArg)
+	{
+		this.chosenPath = chosenPathArg;
 	}
 
 	/* Methods */
-	/**
-	 * @see pracHDVELH.NodeMultiple#getData()
-	 */
-	public String getData() {
-		/* TO BE COMPLETED */
+	public String getData()
+	{
+		return (String) this.Ndata;
 	}
 
-	/**
-	 * @see pracHDVELH.NodeMultiple#setData(Object)
-	 * @param data
-	 */
-	public void setData(String data) {
-		/* TO BE COMPLETED */
+	public void setData(String data)
+	{
+		this.Ndata = data;
 	}
 
-	/**
-	 * @see pracHDVELH.NodeMultiple#getDaughter(int)
-	 */
-	@Override
-	public Event getDaughter(int i) {
-		/* TO BE COMPLETED */
+	public Event getDaughter(int i)
+	{
+		return this.daughters[i];
 	}
 
-	/**
-	 * @see pracHDVELH.NodeMultiple#setDaughter(NodeMultiple, int)
-	 * @param daughter
-	 * @param i
-	 */
-	public void setDaughter(Event daughter, int i) {
-		/* TO BE COMPLETED */
+	public void setDaughterE (Event daughterArg, int i)
+	{
+		this.daughters[i] = daughterArg;
 	}
 
-	/**
-	 * @return the gui
-	 */
 	public GUIManager getGui()
 	{
-		/* TO BE COMPLETED */
+		return this.gui;
 	}
 
-	/**
-	 * @param gui the gui to set
-	 */
 	public void setGui(GUIManager gui)
 	{
-		/* TO BE COMPLETED */
+		this.gui = gui;
 	}
 
-	/**
-	 * @return the id
-	 */
 	public int getId()
 	{
-		/* TO BE COMPLETED */
+		return this.id;
 	}
 }
 
